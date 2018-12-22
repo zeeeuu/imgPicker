@@ -1,6 +1,9 @@
 # imgPicker
 A cool jquery plugin for adding images to your web projects
 
+
+see documentation https://github.com/zeeeuu/imgPicker/wiki/Documentation
+
  
 ## Authors
 
