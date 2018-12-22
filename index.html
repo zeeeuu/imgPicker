@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>imgPicker</title>
+  <link rel="stylesheet" type="text/css" href="src/css/jquery.auto-complete.css">
+  <link rel="stylesheet" type="text/css" href="src/css/jquery.flex-images.css">
+  <link rel="stylesheet" type="text/css" href="src/css/cropper.min.css">
+  <link rel="stylesheet" type="text/css" href="src/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="src/css/imgPicker.css">
+  <link rel="stylesheet" type="text/css" href="src/css/jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="src/css/jquery.ui.rotatable.css">
+	  
+</head>
+<body>
+<h1>It is imgPicker index page</h1>
+ <button id="imgPicker">Add Image</button>
+ <div id="image_container">
+   
+ </div>
+  
+<script type="text/javascript" src="src/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/js/cropper.min.js"></script>
+<script type="text/javascript" src="src/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="src/js/jquery.ui.rotatable.min.js"></script>
+<script type="text/javascript" src="src/js/jquery.auto-complete.min.js"></script>
+<script type="text/javascript" src="src/js/jquery.flex-images.min.js"></script>
+<script type="text/javascript" src="src/js/imgPicker.min.js"></script>
+
+<script type="text/javascript">
+
+  'use strict'
+	   
+     function parseData(data){
+      let images=[];
+      for(let image of data.hits){
+         images.push({
+          preview:image.previewURL,
+          previewWidth:image.previewWidth,
+          highRes:image.largeImageURL
+         })   
+      }
+       return {
+        total:data.total,
+        images:images
+       }
+     }
+
+	 let imageset,scrollUrl,scrollData,pageNumber=2,picker=  $('#imgPicker').imgPicker({
+      resize:547,
+      formate:['jpg','.gif'],
+      containment:$('#image_container'),
+      preset:[
+        {
+          label:'Popular Images',
+          urlSet:["src/img/furniture.jpg","src/img/kitchen.jpg","src/img/painting.jpg"]
+        }
+      ],
+      done:function(image){
+        console.log(image);
+      },
+      edit:function(src){
+          // alert(src);
+      },
+      
+      containment:$('#image_container'),
+
+      search:{
+        minChars:3,
+        autoComplete:function(char){
+
+             return ['man','animal','bed','furniture','dog','cat','bird','chair','women','rain','winter','summer','blossom','tree','wood','vegetables','smartphone','tablet','computer','electronics','books','bussiness','meeting','house','farm','sparrow'];
+        },
+        data:function(keyword){
+            
+           let url="https://pixabay.com/api/?key=6311801-aa69dcc73b3a3d9d9ed888ff7&q="+keyword+"&image_type=photo&per_page=50";
+           scrollUrl=url;
+           pageNumber=2;
+           $.getJSON(url,function(data){
+           
+            imageset=parseData(data);
+             
+           });
+           return imageset;
+ 
+        },
+        onScroll:function(){
+          let pageUrl=scrollUrl+"&page="+pageNumber;
+              pageNumber=pageNumber+1;
+               $.getJSON(pageUrl,function(data){
+           
+               scrollData=parseData(data);
+             
+               });
+
+               return scrollData;
+        }
+      }
+       
+     });
+  
+</script>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+  
+.image-modal{
+	position:absolute; top: 0px;left: 0px; width: 100vw; 
+	height: 100vh; background: rgb(125,125,125,0.6);  
+	 overflow-y:scroll; display:none;
+}
+ 
+.image-modal .search-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 4px;
+  width: 60%;
+  z-index: 5; 
+  display: none;
+  
+}
+.image-modal .preset-images{
+ width: 70px; height: 100%;  margin:2px;
+}
+
+.image-modal .search-container .search-sources{
+	padding: 5px; border-radius: 4px; background: #f8f8f8; font-size: 16px; 
+	margin: 5px; cursor: pointer; font-family: sans-serif;
+}
+.image-modal .select-image{
+	  cursor: pointer;
+}
+.image-modal .search-box{
+padding: 15px
+}
+.image-modal .image-search-input{
+	width:100%;max-width:600px; border-radius: 0px
+}
+.image-modal .image-search-input:focus{
+	 border-color: dodgerblue
+}
+.image-modal .search-input{
+	border-top: 1px solid #eee;border-bottom:1px solid #eee;
+	background:#fafafa;
+	margin:5px 0;padding:10px 5px;text-align:center
+}
+
+.image-modal .search-container .search-sources:hover{
+background: #f1f1f1
+}
+
+.image-modal .search-container .active-search-source{
+	background:#f0f0f0
+}
+ 
+
+.image-modal .modal-container{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 4px;
+  max-width:400px;
+  width: 400px
+
+  
+}
+
+.image-modal .modal-header{
+padding: 15px; border-bottom: 1px solid #f2f2f2; font-size: 18px;
+	 font-family: aller	
+}
+
+.image-modal .search-body{
+  
+position: relative; font-family: sans-serif;	
+}
+
+ 
+.image-modal .modal-close{
+  float: right; color: darkgrey; font-size: 26px; cursor:pointer;
+}
+
+.image-modal .modal-close:hover{
+	color: red
+}
+
+.image-modal .search-close{
+  float: right; color: darkgrey; font-size: 26px; cursor:pointer;
+}
+
+.image-modal .search-close:hover{
+	color: red
+}
+ 
+#modal_close:hover{
+	color: red
+}
+.image-modal .modal-body{
+	  padding: 15px;  
+	  position: relative; font-family: sans-serif; 
+	   
+}
+
+.image-modal .nosr{
+	  padding: 15px;  
+	   text-align: center;font-family: lato 
+	   
+}
+.image-modal .modal-label{
+	font-family: sans-serif; color:grey; font-size: 14px
+}
+.image-modal .modal-help{
+	color:grey;
+}
+.image-modal .image-input{
+	width: 99%; height: 30px; border-style: none; border-radius: 4px
+	; border:1px solid lightgrey; font-size: 14px; font-family:sans-serif;
+	margin-top: 8px;  padding-left: 5px
+}
+.image-modal .modal-divider{
+	font-family:sans-serif; font-size: 14px; text-align: center;padding: 10px
+}
+.image-modal .preset{
+	display: none
+}
+.image-modal .from-search{
+display: none;	 
+}
+.image-modal .upload-button{
+	width: 100%; background: linear-gradient(lightblue,dodgerblue) ;
+	 margin-top: 25px  
+}
+.image-modal .modal-footer{
+	padding: 15px;  border-top: 1px solid #f2f2f2;
+}
+.image-modal .modal-buttons{
+height: 35px; border-style: none; border: 1px solid grey;
+	text-align: center; color:white; border-radius: 4px; font-size: 16px;
+	cursor:pointer;
+}
+.image-modal .footer-buttons{
+	padding:10px;   
+}
+.image-modal .cancel-button{
+ /*background: linear-gradient(red,tomato);    */
+ margin-left:10px; background: transparent;color: dodgerblue; border: none
+}
+.image-modal .search-images{
+	overflow-y:scroll; height: 400px ; margin-bottom: 30px
+}
+.image-modal .ok-button{
+background: linear-gradient(green,lightgreen);  margin-left:65%; 
+  	 
+}
+.image-modal .modal-panel{
+	position: relative; display: block;
+}
+.image-modal .modal-panel > .close-panel{
+	position: absolute; top: -10px; left: 97.2%; color:grey; 
+	font-size: 18px; display: none
+}
+.image-modal .modal-panel > .close-panel:hover{
+	color: red; cursor: pointer;  
+
+}
+.image-modal .preset-content{
+	width: 100%; height: 70px; padding: 2px; background: #f2f2f2; 
+	overflow-x: scroll; margin-top: 10px; overflow-y: hidden;
+}
+.image-modal .create-image{
+	background: black; width: 100%; height:auto; margin-top: 10px;
+	 display: none; overflow:hidden;
+}
+.image-modal .image-tools{
+	padding: 10px; color: grey
+}
+.image-modal .static-panel-close{
+	 color: grey; cursor: pointer;
+	 display: none; position:relative; left: 97%;
+}
+.image-modal .static-panel-close:hover{
+	 color:red;
+}
+.image-modal .image-tools .image-tool{
+	margin-left: 5px; margin-right: 5px ;cursor: pointer;
+}
+.image-modal .image-tools .image-tool:hover{
+	 color: white;  
+}
+.image-modal .show-image{
+	paadding: 5px;   
+}
+.image-modal .uploading-image{
+	position: relative; margin-top: 20px;   
+}
+.image-modal .tool-applied{
+ color:white;
+}
+.image-modal .tool-not-applied{
+ color:grey;
+}
+
+.image-modal .crop-image{
+	
+	max-width:100%; height: auto; position: relative; 
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+ .image-modal{
+	  
+}
+.image-modal .modal-container{
+   
+  width: 98%;
+  top: 75%
+ 
+}
+.image-modal .search-container{
+  
+  top: 75%;
+  width:98%;
+  
+}
+.image-modal .ok-button{
+  margin-left:56%; 
+  	 
+}
+.image-modal .image-search-input{
+	width:100%;max-width:90%; border-radius: 0px
+}
+.image-modal .flex-images{
+	height: 240px
+}
+
+}
+ 
+}
